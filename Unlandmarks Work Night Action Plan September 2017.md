@@ -6,15 +6,13 @@ This is a planning document for the Code for Pittsburgh Civic Hack Night happeni
 
 August flew by. The data standard is in a solid form, so we can now turn our attention to those elements which require the standard to be in place:
 
-* Begin loading data into a central repository (from which the map will render)
+* Begin researching & loading data into a central repository (from which the map will render)
 * Build the viewer which renders the map, and embed it in www.unlandmarks.com
-* Plan out the community listening sessions we'll be doing in the coming months.
-
 ## Activities
 
 Lets dig in.
 
-### Building The Database
+### Do the Research! Fill in the Data!
 
 #### Desired Outcomes
 
@@ -53,21 +51,32 @@ It's really, really important work. It's not a race. It is quality over quantity
 
 ###### Tools for Self-Organization
 
-* [Trello]()
-* [Github]()
-* [Slack]()
+* [Github](https://github.com/codeforpittsburgh)
+* [Slack](codeforpgh.slack.com) - the #unlandmarks channel specifically
+* Suggest one to the group!
 
 
-### Building the Viewer
+### Build the Viewer!
 #### Desired Outcomes
 
-* 
-* 
-* 
+* Pick a technical solution. Carto is the strong contendor right now.
+* Prototype with the GREEN (points which have been verified) data from the database Google Spreadsheet (downloaded & flattened into a more appropriate file type)
+* Get the map displaying, and get it hooked into www.unlandmarks.com
+* During that process, the addition of comments, hints, shortcuts, agreed-upon-subsidiary-standards, and other helpful information and clarification added to the Data Standard Document
 
-### Planning out Community Listening Sessions
-#### Desired Outcomes
+We don't have much so far. We talked through the technical specifications at the last meeting, and did some initial research, but could not really progress without some sample data to start playing with.
 
-* 
-* 
-* 
+We now have some sample data, and will gather more as the night progresses.
+
+This team will be working simultaneously with database & research team. It will be good to identify one person to be an ongoing liaison with the research team, to let them know if there are any technical requirements they'll need to incorporate into their data cleaning. EG "These dates need to be in X format, not Y format".
+
+#### Resources
+
+* [Unlandmark Master Spreadsheet (not live right now)](https://docs.google.com/spreadsheets/d/1kMlKdrgD1538uLtEqh1ikTEMNWjc2LNWSW6fcU5xLfM/edit#gid=0)
+* [Unlandmarks Data Standard](https://docs.google.com/spreadsheets/d/14JtvHoKmjXTvapPqOBnRywATbQbaKhnSp0lavJ2OlwE/edit?usp=drive_web)
+
+###### Tools for Self-Organization
+
+* [Github](https://github.com/codeforpittsburgh)
+* [Slack](codeforpgh.slack.com) - the #unlandmarks channel specifically
+* Suggest one to the group!
