@@ -48,14 +48,15 @@ It's really, really important work. It's not a race. It is quality over quantity
 
 #### Resources
 
-[Unlandmark Master Spreadsheet (not live right now)](https://docs.google.com/spreadsheets/d/1kMlKdrgD1538uLtEqh1ikTEMNWjc2LNWSW6fcU5xLfM/edit#gid=0)
-[Unlandmarks Data Standard](https://docs.google.com/spreadsheets/d/14JtvHoKmjXTvapPqOBnRywATbQbaKhnSp0lavJ2OlwE/edit?usp=drive_web)
+* [Unlandmark Master Spreadsheet (not live right now)](https://docs.google.com/spreadsheets/d/1kMlKdrgD1538uLtEqh1ikTEMNWjc2LNWSW6fcU5xLfM/edit#gid=0)
+* [Unlandmarks Data Standard](https://docs.google.com/spreadsheets/d/14JtvHoKmjXTvapPqOBnRywATbQbaKhnSp0lavJ2OlwE/edit?usp=drive_web)
 
 ###### Tools for Self-Organization
 
-[Trello]()
-[Github]()
-[Slack]()
+* [Trello]()
+* [Github]()
+* [Slack]()
+
 
 ### Building the Viewer
 #### Desired Outcomes
