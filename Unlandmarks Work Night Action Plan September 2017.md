@@ -34,14 +34,23 @@ If someone has left a personal history note, put it in quotes, clean up the spel
 
 It's really, really important work. It's not a race. It is quality over quantity. We only have ~40 nominations so far. We don't *have* quantity yet. But when we do, we *have to* keep this mindset present.
 
+#### Color Scheme
+
+While working in the Master Spreadsheet, a color scheme in the _name_ column should be used to keep the workflow orderly.
+
+* Points that have just been accepted from nomination, which don't have any verified information, should have RED backgrounds. 
+* If you are actively researching a point, change the background to ORANGE.
+* When you have completed the research on a point and it is ready to  be sent towards the live map, change the background to BLUE. 
+
 #### Flow of Work
 
 * Create a new tab called "{Your Name} Scratch Paper" & copy the top row of the *Master List Tab* into it.
 * Pick a RED-background point to clean up & research. Click into the Name cell and change the background to ORANGE.
 * **The first five points listed - American Buyers Guild, The Ankara Nightclub, Babyland, Bassenheim & Bruster's Ice Cream, Greenfield are already cleaned. Refer to this set when looking at formatting. (Bonus points if you can track down more precise start and end dates)**
-* These five points are highlighted GREEN because they have been cleaned up. Points without cleanup should be highlighted RED. Points being actively researched by someone should be highlighted ORANGE.
+* These five points are highlighted BLUE because they have been cleaned up. Points without cleanup should be highlighted RED. Points being actively researched by someone should be highlighted ORANGE.
 * Copy and Paste the whole line into your scratch paper tab. You might want to edit the cell widths within that Scratch Paper tab after you do this, to better suit your screen.
 * Research that line until you are satisfied, and then paste the line back into the *Master List Tab*.
+* If you research the point but can't find enough details to get it located on the map, change the background to a slightly darker RED and move on.
 * Repeat until we run out of nominated points, and then start adding & researching your own!
 
 #### Resources
@@ -59,8 +68,8 @@ It's really, really important work. It's not a race. It is quality over quantity
 ### Build the Viewer!
 #### Desired Outcomes
 
-* Pick a technical solution. Carto is the strong contendor right now.
-* Prototype with the GREEN (points which have been verified) data from the database Google Spreadsheet (downloaded & flattened into a more appropriate file type)
+* Pick a technical solution. Carto is the strong contender right now.
+* Prototype with the BLUE (points which have been verified) data from the database Google Spreadsheet (downloaded & flattened into a more appropriate file type)
 * Get the map displaying, and get it hooked into www.unlandmarks.com
 * During that process, the addition of comments, hints, shortcuts, agreed-upon-subsidiary-standards, and other helpful information and clarification added to the Data Standard Document
 
