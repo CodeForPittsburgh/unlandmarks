@@ -95,3 +95,6 @@ This team will be working simultaneously with database & research team. It will 
 * Should the current_photo_link and historic_photo_url be links directly to an image (.jpg, .png, .etc.)? Or can they be to a website that includes images?
 * There are some fields that - eventually - will need to be cleaned/standardized into a specific data type, such as a datetime. They won't be able to have extra free text b/c we will need to filter maps, etc. **However**, those fields currently contain really cool stuff it would be good to keep. Such as citations/links that demonstrate where the info was found. Do we need each field to have a paired "source" field? Or is there a better way to handle this?
 * What is the difference between historic_photo_url and research_url in the data standard?
+* It seems we should rename start_date_confidence to start_date_precision or start_date_specificity? Current phrasing is a bit confusing?
+* Should we add personal histories found in published news articles, etc.?
+* There was some discussion about "defining the word landmark" - what about very short-lived businesses, etc.? My assumption is that we are counting anything that "isn't there anymore" that people want to share.
