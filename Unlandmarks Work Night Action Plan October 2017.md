@@ -60,7 +60,7 @@ While working in the Master Spreadsheet, a color scheme in the _name_ column sho
 * [Unlandmark Master Spreadsheet (not live right now)](https://docs.google.com/spreadsheets/d/1kMlKdrgD1538uLtEqh1ikTEMNWjc2LNWSW6fcU5xLfM/edit#gid=0)
 * [Unlandmarks Data Standard](https://docs.google.com/spreadsheets/d/14JtvHoKmjXTvapPqOBnRywATbQbaKhnSp0lavJ2OlwE/edit?usp=drive_web)
 
-###### Tools for Self-Organization
+##### Tools for Self-Organization
 
 * [Github](https://github.com/codeforpittsburgh)
 * [Slack](codeforpgh.slack.com) - the #unlandmarks channel specifically
@@ -75,9 +75,7 @@ While working in the Master Spreadsheet, a color scheme in the _name_ column sho
 * Get the map displaying, and get it hooked into www.unlandmarks.com
 * During that process, the addition of comments, hints, shortcuts, agreed-upon-subsidiary-standards, and other helpful information and clarification added to the Data Standard Document
 
-We don't have much so far. We talked through the technical specifications at the last meeting, and did some initial research, but could not really progress without some sample data to start playing with.
-
-We now have some sample data, and will gather more as the night progresses.
+See our technical brainstorm, [here](https://docs.google.com/document/d/1xRo8ak3zzTFIJ0Yru9dHskHt0Ll0qbOK2lMX-oIDXyY/edit#heading=h.2nrt1woa1y90).
 
 This team will be working simultaneously with database & research team. It will be good to identify one person to be an ongoing liaison with the research team, to let them know if there are any technical requirements they'll need to incorporate into their data cleaning. EG "These dates need to be in X format, not Y format".
 
@@ -86,7 +84,7 @@ This team will be working simultaneously with database & research team. It will 
 * [Unlandmark Master Spreadsheet (not live right now)](https://docs.google.com/spreadsheets/d/1kMlKdrgD1538uLtEqh1ikTEMNWjc2LNWSW6fcU5xLfM/edit#gid=0)
 * [Unlandmarks Data Standard](https://docs.google.com/spreadsheets/d/14JtvHoKmjXTvapPqOBnRywATbQbaKhnSp0lavJ2OlwE/edit?usp=drive_web)
 
-###### Tools for Self-Organization
+##### Tools for Self-Organization
 
 * [Github](https://github.com/codeforpittsburgh)
 * [Slack](codeforpgh.slack.com) - the #unlandmarks channel specifically
@@ -98,6 +96,24 @@ This team will be working simultaneously with database & research team. It will 
 * Prototype questionnaires / data collection forms for the community listening opportunity at Data Day
 * Attendance & hype for the upcoming CNF Interview Training event
 * Discussion of First Friday
+
+This project is about the Pittsburgh community's collective memory, and if we are to be shepherds of those memories, it is our duty to go *out* into the community, everywhere in that community.
+
+Much of that data-collection will be non-electronic. Paper is a powerful tool for mobile work, and it is time for us to build out that physical data collection system for the map.
+
+But different tools have different strengths. The information we collect in person is *not* the same as what that person might put into a web-form. Our abilities to capture that information are also different.
+
+Tonight, let's build consensus about what community data collection should focus on - what data is *critical* to get from the person while they are there with you, what data can be filled in later.
+
+We'll also talk through a number of upcoming events related to community listening, including one that will require volunteers.
+
+#### Resources
+
+##### Tools for Self-Organization
+
+* [Github](https://github.com/codeforpittsburgh)
+* [Slack](codeforpgh.slack.com) - the #unlandmarks channel specifically
+* Suggest one to the group!
 
 ## Questions arising from tonight's work! 
 
