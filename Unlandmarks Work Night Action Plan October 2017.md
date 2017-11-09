@@ -93,19 +93,13 @@ This team will be working simultaneously with database & research team. It will 
 ### Community Listening!
 #### Desired Outcomes
 
-* Prototype questionnaires / data collection forms for the community listening opportunity at Data Day
-* Attendance & hype for the upcoming CNF Interview Training event
-* Discussion of First Friday
+* Plan outreach campaign to communities that want survey'd
+* plan volunteer organization - how are volunteer interviewers recruited and trained? How are event managers recruited and trained?
 
 This project is about the Pittsburgh community's collective memory, and if we are to be shepherds of those memories, it is our duty to go *out* into the community, everywhere in that community.
 
-Much of that data-collection will be non-electronic. Paper is a powerful tool for mobile work, and it is time for us to build out that physical data collection system for the map.
+We've started data collection. Our first event with Creative Nonfiction went really well. There will be more to come, during the month of December.
 
-But different tools have different strengths. The information we collect in person is *not* the same as what that person might put into a web-form. Our abilities to capture that information are also different.
-
-Tonight, let's build consensus about what community data collection should focus on - what data is *critical* to get from the person while they are there with you, what data can be filled in later.
-
-We'll also talk through a number of upcoming events related to community listening, including one that will require volunteers.
 
 #### Resources
 
