@@ -8,9 +8,10 @@
  * Created: Nov 9, 2017
  */
 create schema unlandmark;
+DROP TABLE IF EXISTS unlandmark.places;
 
 CREATE TABLE unlandmark.places(
-places_id serial NOT NULL,
+places_id serial NOT NULL PRIMARY KEY,
         name varchar(128),
         one_line text,
         nickname varchar(128),
@@ -35,8 +36,9 @@ places_id serial NOT NULL,
         updatetime timestamp not null
 );
 
+DROP TABLE IF EXISTS unlandmark.stories;
 CREATE TABLE unlandmark.stories(
-story_id serial NOT NULL,
+story_id serial NOT NULL PRIMARY KEY,
         research_url VARCHAR(2083),
         research_notes text,
         research_sources text,
@@ -47,19 +49,20 @@ story_id serial NOT NULL,
         -- story_id int primary key AUTO_INCREMENT
 );
 
+DROP TABLE IF EXISTS unlandmark.PlaceStories;
 CREATE TABLE unlandmark.PlaceStories (
-  places_id numeric NOT NULL,
-  story_id numeric NOT NULL
+  places_id integer NOT NULL,
+  story_id integer NOT NULL
 );
 
-ALTER TABLE unlandmark.PlaceStories 
+ALTER TABLE IF EXISTS unlandmark.PlaceStories 
         ADD CONSTRAINT Places_PlaceStories
         FOREIGN KEY (places_id)  REFERENCES  unlandmark.places(places_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE;
 
-ALTER TABLE unlandmark.PlaceStories
+ALTER TABLE IF EXISTS unlandmark.PlaceStories
         ADD CONSTRAINT Stories_PlaceStories
-        FOREIGN KEY (story_id) REFERENCES unlandmark.Stories(story_id)
+        FOREIGN KEY (story_id) REFERENCES unlandmark.stories(story_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE;
