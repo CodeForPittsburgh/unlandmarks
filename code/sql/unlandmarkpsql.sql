@@ -9,17 +9,40 @@
  */
 create schema unlandmark;
 
+-- owner
+-- TBD
+
+-- group
+-- TBD
+-- CREATE GROUP name ;
+
 -- roles
--- CREATE ROLE joe LOGIN INHERIT;
--- CREATE ROLE admin NOINHERIT;
--- CREATE ROLE wheel NOINHERIT;
--- GRANT admin TO joe;
--- GRANT wheel TO admin;
+-- TBD 
+-- CREATE ROLE name ;
+
+-- GRANT admin TO <>;
+
 
 -- ALTER TABLE unlandmark.<>
 -- OWNER TO postgres;
 
 -- create index
+
+-- Example Function and Trigger
+
+CREATE FUNCTION users_stamp() RETURNS trigger AS $users_stamp$
+    BEGIN
+        NEW.updated_time := current_timestamp;
+        NEW.updated_by := current_user;
+        RETURN NEW;
+    END;
+$users_stamp$ LANGUAGE plpgsql;
+
+CREATE TRIGGER users_stamp BEFORE INSERT OR UPDATE ON unlandmark.users
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+
+insert into unlandmark.users (users_name,users_password) values('BOB','BOB1234');
+
 
 DROP TABLE IF EXISTS unlandmark.places;
 CREATE TABLE unlandmark.places(
@@ -40,7 +63,8 @@ places_id serial NOT NULL,
         end_date_confidence numeric,
         history_summary text,
         verification_indicator boolean default FALSE,
-        updatetime timestamp not null,
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT places_pkey PRIMARY KEY (places_id)
 )
 WITH (
@@ -49,13 +73,15 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.address;
 CREATE TABLE unlandmark.address (
-address_id serial NOT NULL,
-current_address text,
-parcel_number varchar(20),
-current_owner varchar(128),
-last_sold_date date,
-geocode_source varchar(20),
-location_latlng point,
+        address_id serial NOT NULL,
+        current_address text,
+        parcel_number varchar(20),
+        current_owner varchar(128),
+        last_sold_date date,
+        geocode_source varchar(20),
+        location_latlng point,
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT address_pkey PRIMARY KEY (address_id)
 )
 WITH (
@@ -64,7 +90,7 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.stories;
 CREATE TABLE unlandmark.stories(
-stories_id serial NOT NULL,
+        stories_id serial NOT NULL,
         research_url_id integer,
         research_notes text,
         research_sources text,
@@ -72,6 +98,8 @@ stories_id serial NOT NULL,
         personal_history_subject text,
         personal_history_recorder text,
         followup_email varchar(255), 
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT stories_pkey PRIMARY KEY (stories_id)
 )
 WITH (
@@ -80,8 +108,10 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.PlaceStories;
 CREATE TABLE unlandmark.PlaceStories (
-  places_id integer NOT NULL,
-  stories_id integer NOT NULL
+        places_id integer NOT NULL,
+        stories_id integer NOT NULL
+        updated_by varchar(20),
+        updated_time timestamp not null,
 )
 WITH (
   OIDS=FALSE
@@ -101,8 +131,10 @@ ALTER TABLE IF EXISTS unlandmark.PlaceStories
 
 DROP TABLE IF EXISTS unlandmark.landmark_status;
 CREATE TABLE unlandmark.landmark_status (
-landmark_status_id serial NOT NULL,
-  landmark_status_description  varchar(20) NOT NULL,
+        landmark_status_id serial NOT NULL,
+        landmark_status_description  varchar(20) NOT NULL,
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT landmark_status_pkey PRIMARY KEY (landmark_status_id)
 )
 WITH (
@@ -111,8 +143,10 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.landmark_type;
 CREATE TABLE unlandmark.landmark_type (
-landmark_type_id serial NOT NULL,
-  landmark_type_description  varchar(20) NOT NULL,
+        landmark_type_id serial NOT NULL,
+        landmark_type_description  varchar(20) NOT NULL,
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT landmark_type_pkey PRIMARY KEY (landmark_type_id)
 )
 WITH (
@@ -121,8 +155,10 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.landmark_photos;
 CREATE TABLE unlandmark.landmark_photos (
-landmark_photos_id serial NOT NULL,
-  landmark_photos_location  varchar(2083),
+        landmark_photos_id serial NOT NULL,
+        landmark_photos_location  varchar(2083),
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT landmark_photos_pkey PRIMARY KEY (landmark_photos_id)
 )
 WITH (
@@ -131,8 +167,10 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.landmark_url;
 CREATE TABLE unlandmark.landmark_url (
-landmark_url_id serial NOT NULL,
-  landmark_url_location  varchar(2083),
+        landmark_url_id serial NOT NULL,
+        landmark_url_location  varchar(2083),
+        updated_by varchar(20),
+        updated_time timestamp not null,
   CONSTRAINT landmark_url_pkey PRIMARY KEY (landmark_url_id)
 )
 WITH (
@@ -141,9 +179,11 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.PlaceURL;
 CREATE TABLE unlandmark.PlaceURL (
-place_url_id serial NOT NULL,
-  places_id integer NOT NULL,
-  landmark_url_id integer NOT NULL,
+        place_url_id serial NOT NULL,
+        places_id integer NOT NULL,
+        landmark_url_id integer NOT NULL,
+        updated_by varchar(20),
+        updated_time timestamp not null,
 CONSTRAINT place_url_pkey PRIMARY KEY (place_url_id)
 )
 WITH (
@@ -152,10 +192,12 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.users;
 CREATE TABLE unlandmark.users (
-users_id serial NOT NULL,
-  users_name varchar(20) NOT NULL,
-  users_password varchar(255) NOT NULL,
-  users_groups_id integer,
+        users_id serial NOT NULL,
+        users_name varchar(20) NOT NULL,
+        users_password varchar(255) NOT NULL,
+        users_groups_id integer,
+        updated_by varchar(20),
+        updated_time timestamp not null,
 CONSTRAINT users_pkey PRIMARY KEY (users_id)
 )
 WITH (
@@ -164,11 +206,14 @@ WITH (
 
 DROP TABLE IF EXISTS unlandmark.groups;
 CREATE TABLE unlandmark.groups (
-groups_id serial NOT NULL,
-  groups_name varchar(20) NOT NULL,
+        groups_id serial NOT NULL,
+        groups_name varchar(20) NOT NULL,
+        updated_by varchar(20),
+        updated_time timestamp not null,
 
 CONSTRAINT groups_pkey PRIMARY KEY (groups_id)
 )
 WITH (
   OIDS=FALSE
 );
+
