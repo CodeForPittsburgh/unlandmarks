@@ -1,12 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  mark
- * Created: Nov 9, 2017
- */
 create schema unlandmark;
 
 -- owner
@@ -38,12 +29,6 @@ CREATE FUNCTION users_stamp() RETURNS trigger AS $users_stamp$
     END;
 $users_stamp$ LANGUAGE plpgsql;
 
-CREATE TRIGGER users_stamp BEFORE INSERT OR UPDATE ON unlandmark.users
-    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
-
-insert into unlandmark.users (users_name,users_password) values('BOB','BOB1234');
-
-
 DROP TABLE IF EXISTS unlandmark.places;
 CREATE TABLE unlandmark.places(
 places_id serial NOT NULL,
@@ -71,6 +56,9 @@ WITH (
   OIDS=FALSE
 );
 
+    CREATE TRIGGER places_stamp BEFORE INSERT OR UPDATE ON unlandmark.places
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+
 DROP TABLE IF EXISTS unlandmark.address;
 CREATE TABLE unlandmark.address (
         address_id serial NOT NULL,
@@ -87,6 +75,9 @@ CREATE TABLE unlandmark.address (
 WITH (
   OIDS=FALSE
 );
+
+    CREATE TRIGGER address_stamp BEFORE INSERT OR UPDATE ON unlandmark.address
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
 
 DROP TABLE IF EXISTS unlandmark.stories;
 CREATE TABLE unlandmark.stories(
@@ -105,6 +96,9 @@ CREATE TABLE unlandmark.stories(
 WITH (
   OIDS=FALSE
 );
+
+    CREATE TRIGGER stories_stamp BEFORE INSERT OR UPDATE ON unlandmark.stories
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
 
 DROP TABLE IF EXISTS unlandmark.PlaceStories;
 CREATE TABLE unlandmark.PlaceStories (
@@ -129,6 +123,9 @@ ALTER TABLE IF EXISTS unlandmark.PlaceStories
         ON DELETE CASCADE
         ON UPDATE CASCADE;
 
+    CREATE TRIGGER PlaceStories_stamp BEFORE INSERT OR UPDATE ON unlandmark.PlaceStories
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+
 DROP TABLE IF EXISTS unlandmark.landmark_status;
 CREATE TABLE unlandmark.landmark_status (
         landmark_status_id serial NOT NULL,
@@ -140,6 +137,9 @@ CREATE TABLE unlandmark.landmark_status (
 WITH (
   OIDS=FALSE
 );
+
+    CREATE TRIGGER landmark_status_stamp BEFORE INSERT OR UPDATE ON unlandmark.landmark_status
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
 
 DROP TABLE IF EXISTS unlandmark.landmark_type;
 CREATE TABLE unlandmark.landmark_type (
@@ -153,6 +153,10 @@ WITH (
   OIDS=FALSE
 );
 
+    CREATE TRIGGER landmark_type_stamp BEFORE INSERT OR UPDATE ON unlandmark.landmark_type
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+
+
 DROP TABLE IF EXISTS unlandmark.landmark_photos;
 CREATE TABLE unlandmark.landmark_photos (
         landmark_photos_id serial NOT NULL,
@@ -164,6 +168,9 @@ CREATE TABLE unlandmark.landmark_photos (
 WITH (
   OIDS=FALSE
 );
+
+    CREATE TRIGGER landmark_photos_stamp BEFORE INSERT OR UPDATE ON unlandmark.landmark_photos
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
 
 DROP TABLE IF EXISTS unlandmark.landmark_url;
 CREATE TABLE unlandmark.landmark_url (
@@ -177,6 +184,9 @@ WITH (
   OIDS=FALSE
 );
 
+    CREATE TRIGGER landmark_url_stamp BEFORE INSERT OR UPDATE ON unlandmark.landmark_url
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+
 DROP TABLE IF EXISTS unlandmark.PlaceURL;
 CREATE TABLE unlandmark.PlaceURL (
         place_url_id serial NOT NULL,
@@ -189,6 +199,9 @@ CONSTRAINT place_url_pkey PRIMARY KEY (place_url_id)
 WITH (
   OIDS=FALSE
 );
+
+    CREATE TRIGGER PlaceURL_stamp BEFORE INSERT OR UPDATE ON unlandmark.PlaceURL
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
 
 DROP TABLE IF EXISTS unlandmark.users;
 CREATE TABLE unlandmark.users (
@@ -204,6 +217,9 @@ WITH (
   OIDS=FALSE
 );
 
+    CREATE TRIGGER users_stamp BEFORE INSERT OR UPDATE ON unlandmark.users
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
+
 DROP TABLE IF EXISTS unlandmark.groups;
 CREATE TABLE unlandmark.groups (
         groups_id serial NOT NULL,
@@ -217,3 +233,5 @@ WITH (
   OIDS=FALSE
 );
 
+    CREATE TRIGGER groups_stamp BEFORE INSERT OR UPDATE ON unlandmark.groups
+    FOR EACH ROW EXECUTE PROCEDURE users_stamp();
