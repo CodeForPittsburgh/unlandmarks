@@ -10,14 +10,13 @@
     </head>
 </html>
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-$filename = "../Data/Unlandmarks Master Spreadsheet.csv";
+$filename = "../../Data/Unlandmarks Master Spreadsheet.csv";
 //C:\wamp\www\unlandmark\Unlandmarks Master Spreadsheet.csv
 parseFile($filename);
 
@@ -33,14 +32,85 @@ function parseFile($filename) {
 }
 
 function display($pieces) {
-    $count = count($pieces);
-    print "Count " . $count . "<BR>";
-    print_r($pieces);
-    print "<BR>";
+    //$count = count($pieces);
+    //print "Count " . $count . "<BR>";
+    // print_r($pieces);
+    //print "<BR>";
+    //buildPlacesType($pieces);
 
+    //buildAddressInsert($pieces);
+    buildPlacesInsert($pieces);
 }
-function buildInsert($pieces)
+function buildPlacesType($pieces)
 {
+    $type = $pieces[3];
+    $sql = "INSERT INTO unlandmark.landmark_type(
+           landmark_type_description)
+    VALUES ('$type');";
+    print $sql . "<BR>";
+    
+}
+
+function buildAddressInsert($pieces) {
+    //print "Current Address " . $pieces[4] . "<BR>";
+    //print "Historical Address " . $pieces[8] . "<BR>";
+    $lat = $pieces[22] ;
+    $lng = $pieces[23] ;
+    if (strlen($lat) === 0 || strlen($lng)===0)
+    {
+        
+    }
+ else {
+        
+ 
+    $sql = "INSERT INTO unlandmark.address(
+            current_address, geocode_source, location_latlng)
+    VALUES ('" . pg_escape_string($pieces[4]) . "', 'USER',(ST_GeomFromText('POINT(" . $pieces[22] . " " . $pieces[23] . ")',4326)) );";
+    print $sql . "<BR>";
+    //buildPlacesInsert($pieces);
+ }
+//update your_table set geom=st_SetSrid(st_MakePoint(longitude, latitude), 4326);
+}
+
+function buildPlacesInsert($pieces)
+{
+    $address_id = 1;
+    $landmark_status_id =2;
+    $current_photo_link_id = 3;
+    $historic_photo_url_id = 4;
+    $places_type_id = 5;
+    
+    $name = pg_escape_string($pieces[0]);
+    $one_line = pg_escape_string($pieces[1]);
+    $nickname = pg_escape_string($pieces[2]);
+    $current_use = pg_escape_string($pieces[6]);
+    $historic_address = pg_escape_string($pieces[8]);
+    $start_date = pg_escape_string($pieces[10]);
+    $start_date_confidence = $pieces[11];
+    if(strlen($start_date_confidence) === 0)
+    {
+       $start_date_confidence = 0; 
+    }
+    $end_date = pg_escape_string($pieces[12]);
+    $end_date_confidence = $pieces[13];
+    if(strlen($end_date_confidence) === 0)
+    {
+        $end_date_confidence =0;
+    }
+    $history_summary = pg_escape_string($pieces[14]);
+    if (strpos($history_summary,'http')!== FALSE)
+    {
+        $history_summary = "CHECK VALUES";
+    }
+    //$verification_indicator = $pieces[24];
+    
+    $sql = "INSERT INTO unlandmark.places(
+            name, one_line, nickname, places_type_id, address_id, 
+            landmark_status_id, current_use, current_photo_link_id, historic_address, 
+            historic_photo_url_id, start_date, start_date_confidence, end_date, 
+            end_date_confidence, history_summary)
+    VALUES ('$name', '$one_line', '$nickname', $places_type_id, $address_id, $landmark_status_id, '$current_use', $current_photo_link_id, '$historic_address', $historic_photo_url_id, '$start_date', $start_date_confidence, '$end_date', $end_date_confidence, '$history_summary');";
+ print $sql . "<BR>";    
     
 }
 /*
