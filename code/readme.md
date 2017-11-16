@@ -23,5 +23,5 @@ I added two audit columns and supporting function and table triggers
 
 TBD groups and roles and user/password maitenance
 
-You can find the table/column setup under database folder in unlandmarkpsql.sql
+You can find the table/column setup under unlandmarks/code/sql folder in unlandmarkpsql.sql
 
