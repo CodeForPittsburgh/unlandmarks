@@ -21,7 +21,11 @@ That's what I've configured
 
 I added two audit columns and supporting function and table triggers
 
-TBD groups and roles and user/password maitenance
+TBD groups and roles and user/password maintenance
 
 You can find the table/column setup under unlandmarks/code/sql folder in unlandmarkpsql.sql
+
+Was processing addresses and once again data entry bytes ;-( thinking of using lat/lng as the primary key, but that is dependant on the
+geo-coding source, as decimal accuracy is source unique.
+
 
