@@ -28,4 +28,7 @@ You can find the table/column setup under unlandmarks/code/sql folder in unlandm
 Was processing addresses and once again data entry bytes ;-( thinking of using lat/lng as the primary key, but that is dependant on the
 geo-coding source, as decimal accuracy is source unique.
 
+I am working on adding a table that stores all URL's but will type them as photo, information, history, ...
+
+
 
