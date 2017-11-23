@@ -30,5 +30,7 @@ geo-coding source, as decimal accuracy is source unique.
 
 I am working on adding a table that stores all URL's but will type them as photo, information, history, ...
 
+I have mocked up some GUI pages, right now for observation it's in a power point presentation. The code is not functional and needs more entry fields.
+
 
 
