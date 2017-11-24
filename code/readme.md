@@ -32,5 +32,7 @@ I am working on adding a table that stores all URL's but will type them as photo
 
 I have mocked up some GUI pages, right now for observation it's in a power point presentation. The code is not functional and needs more entry fields.
 
+The php code is under code/php/View index.html starts the mockup
+
 
 
