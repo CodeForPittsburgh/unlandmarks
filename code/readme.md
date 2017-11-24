@@ -34,5 +34,7 @@ I have mocked up some GUI pages, right now for observation it's in a power point
 
 The php code is under code/php/View index.html starts the mockup
 
+I have to re-write the Stories mock-up problem with the calendar
+
 
 
