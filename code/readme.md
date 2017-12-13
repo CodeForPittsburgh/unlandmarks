@@ -1,5 +1,9 @@
 # unlandmark data observations
 ## Mark Howe 11/16/17
+## Update 12/13/17
+## You should ignore the code folder and look at the unlandmark_prototype project
+## But do read over this document. 
+## 
 ## After reviewing the Google Spreadsheet data here are some suggestions:
 Any time a date or time is required from the user, a calendar widget should be used.
 
